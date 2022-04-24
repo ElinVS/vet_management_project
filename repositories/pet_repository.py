@@ -10,3 +10,20 @@ def save(pet):
     results = run_sql(sql, values)
     id = results[0]['id']
     pet.id = id
+
+def select_all():
+    pets = []
+
+    sql = "SELECT * FROM pets"
+    results = run_sql(sql)
+
+    for result in results:
+        owner = owner_repository.select(result["owner_id"])
+        pet = Pet(result["name"], result["species"],result["dob"], owner, result["treatment_notes"], result["id"])
+        pets.append(pet)
+    return pets
+
+
+def delete_all():
+    sql = "DELETE FROM pets"
+    run_sql(sql)
