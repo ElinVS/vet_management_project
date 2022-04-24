@@ -1,8 +1,10 @@
 # import pdb
 
 from models.owner import Owner
+from models.pet import Pet
 
 import repositories.owner_repository as owner_repository
+import repositories.pet_repository as pet_repository
 
 owner_repository.delete_all()
 
@@ -12,6 +14,10 @@ owner_2 = Owner("Benjamin", "Benson", "ben@gmail.com", "0777 333 444", "2 The Ot
 
 owner_repository.save(owner_1)
 owner_repository.save(owner_2)
+
+pet_1 = Pet("Marvin", "Dog", "01-02-2017", owner_1, "Re-curring stomach issues. Last working treatment was on 03-03-2022")
+
+pet_repository.save(pet_1)
 
 
 

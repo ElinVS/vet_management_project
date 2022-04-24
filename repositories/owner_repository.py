@@ -1,4 +1,3 @@
-from cProfile import run
 from db.run_sql import run_sql
 from models.owner import Owner
 
@@ -37,7 +36,7 @@ def delete(id):
     sql = "DELETE FROM owners WHERE id = %s"
     values = [id]
     run_sql(sql, values)
-    
+
 
 def update(owner):
     sql = "UPDATE owners SET (first_name, last_name, email, phone_number, adress, postcode, registered) = (%s, %s, %s, %s, %s, %s, %s)  WHERE id = %s"

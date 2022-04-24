@@ -1,13 +1,23 @@
+DROP TABLE IF EXISTS pets;
 DROP TABLE IF EXISTS owners;
 
 CREATE TABLE owners (
     id SERIAL PRIMARY KEY,
-    first_name VARCHAR(255),
-    last_name VARCHAR(255),
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
     email VARCHAR(255),
-    phone_number VARCHAR(255),
-    adress VARCHAR(255),
-    postcode VARCHAR (255),
+    phone_number VARCHAR(255) NOT NULL,
+    adress VARCHAR(255) NOT NULL,
+    postcode VARCHAR (255) NOT NULL,
     registered BOOLEAN
+);
+
+CREATE TABLE pets (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    species VARCHAR(255) NOT NULL,
+    dob VARCHAR(255) NOT NULL,
+    treatment_notes TEXT,
+    owner_id INT NOT NULL REFERENCES owners(id) 
 );
 
