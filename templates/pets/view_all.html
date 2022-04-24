@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+
+{% for pet in all_pets%}
+{% for owner in all_owners%}
+
+{{pet.name}}
+{{pet.species}}
+
+{{owner.first_name}} 
+{{owner.last_name}} 
+
+
+{% endfor %} 
+{% endfor %} 
+
+
+{% endblock %}
+
+

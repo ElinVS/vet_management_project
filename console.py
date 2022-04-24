@@ -22,14 +22,8 @@ pet_2 = Pet("Milo", "Cat", "02-02-2012", owner_2, "Persistant skin infection on 
 pet_repository.save(pet_1)
 pet_repository.save(pet_2)
 
-test_owner_selectall = owner_repository.select_all()
-print(test_owner_selectall[1].__dict__)
-
-test_pet_selectall = pet_repository.select_all()
-print(test_pet_selectall[0].__dict__)
-
-
-
+# test_owner_selectall = owner_repository.select_all()
+# print(test_owner_selectall[1].__dict__)
 
 # test_owner_select = owner_repository.select(2)
 # print(test_owner_select.__dict__)
@@ -37,9 +31,16 @@ print(test_pet_selectall[0].__dict__)
 # owner_repository.delete(2)
 
 
+# test_pet_selectall = pet_repository.select_all()
+# print(test_pet_selectall[0].__dict__)
 
+# test_pet_select = pet_repository.select(1)
+# print(test_pet_select.__dict__)
 
+# pet_repository.delete(2)
 
+pet_1.owner.id = 2
+pet_repository.update(pet_1)
 
 
 # pdb.set_trace()

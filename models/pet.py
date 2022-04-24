@@ -5,4 +5,5 @@ class Pet:
         self.dob = dob
         self.owner = owner
         self.treatment_notes = treatment_notes
+        self.id = id
         

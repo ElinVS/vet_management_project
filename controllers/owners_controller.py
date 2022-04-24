@@ -1,4 +1,4 @@
-import re
+
 from flask import Blueprint, Flask, render_template, request
 
 from models.owner import Owner
@@ -7,9 +7,6 @@ from repositories import owner_repository
 
 owners_blueprint = Blueprint("owners", __name__)
 
-@owners_blueprint.route('/register')
-def register_options():
-    return render_template('register.html')
 
 
 @owners_blueprint.route('/owners/register_owner')

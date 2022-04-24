@@ -2,7 +2,40 @@
 {% block content %}
 
 
-For to register pet here
+<form action="/pets/view_all" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="name" required>   
+    </div>
+      
+    <div>
+        <label for="species">Species:</label>
+        <input type="text" id="species" name="species" placeholder="species" required>
+    </div>
+
+    <div>
+        <label for="dob">D.O.B:</label>
+        <input type="text" id="dob" name="dob" placeholder="dob" required>
+    </div>
+
+    <div>
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number" placeholder="Phone Number" required>
+    </div>
+
+    <div>
+        <label for="owner">Owner:</label>
+        <select id="owner" name="owner_id">
+          {% for owner in owners %}
+          <option value="{{owner.id}}">{{owner.first_name}}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+    <button type="submit">Register</button> 
+
+</form>
+
 
 
 {% endblock %}
