@@ -11,3 +11,4 @@ owners_blueprint = Blueprint("owners", __name__)
 def owners():
     owners = owner_repository.select_all()
     return render_template('index.html', owners =owners)
+

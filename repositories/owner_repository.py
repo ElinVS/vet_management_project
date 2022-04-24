@@ -1,3 +1,4 @@
+from cProfile import run
 from db.run_sql import run_sql
 from models.owner import Owner
 
@@ -20,7 +21,19 @@ def select_all():
         owners.append(owner)
     return owners
 
+def select(id):
+    sql = "SELECT * FROM owners WHERE id = %s"
+    values = [id]
+    result = run_sql(sql,values)[0]
+    owner = Owner(result["first_name"], result["last_name"],result["email"], result["phone_number"], result["adress"], result["postcode"], result["registered"],result["id"])
+    return owner
+
 
 def delete_all():
     sql = "DELETE FROM owners"
     run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM owners WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
