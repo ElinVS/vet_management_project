@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-Testin if flask runs correctly
+{% for owner in owners%}
+
+
+{{owner.first_name}} 
+
+
+
+{% endfor %}
 
 {% endblock %}
