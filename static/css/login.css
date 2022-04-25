@@ -1,0 +1,61 @@
+body {
+    background: url('/static/images/blackdog.jpg'); 
+    background-color: black;
+    height: 800px;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+}
+
+.login-container {
+    display: flex;
+    justify-content: flex-end; 
+    padding: 20%;        
+}
+
+#box {
+    width:300px;
+    height:300px;
+    background-color: #4ba7e4;
+    border-radius: 20px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: large;
+}
+
+input[type=text] {
+    margin:20px 20px 0px 20px;
+    padding:10px;
+
+    width: 200px;
+    cursor: text;
+    background-color: #E0E1DD;
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    /* font-size: large; */
+    border-color: transparent; 
+    
+}
+button[type=submit] {
+   
+    margin:35px 20px 0px 20px;
+    padding:10px;
+    border-color: transparent;
+    border-radius: 10px;
+    width: 30%;
+    cursor:pointer;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+button[type=submit]:hover {
+    background: #ff6a0e;
+}
+
+
+
+
+
+
+
