@@ -1,11 +1,11 @@
 body {
     background: url('/static/images/blackdog.jpg'); 
     background-color: black;
-    height: 800px;
+    height: 800px; 
     background-position: left;
     background-repeat: no-repeat;
     background-size: contain;
-    
+
 }
 
 .login-container {

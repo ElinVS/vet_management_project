@@ -1,0 +1,66 @@
+body {
+    background:#FBFEF9;
+}
+
+
+.header > ul  {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row; 
+    width: 100%; 
+    text-align: center; 
+    font-family: 'Poppins', sans-serif;
+    font-size: x-large;
+    padding: 10px; 
+    /* min-height: 100px;  */
+    
+    align-items: flex-end;
+    /* gap: 60px; */
+    list-style: none;
+}
+
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.register {
+    display:flex;    
+    flex-flow: row wrap;
+    justify-content: center; 
+    align-items:center;
+    gap: 20px;
+    flex-grow: 4;
+    text-align: center;
+    
+}
+
+#register-owner {
+    width: 400px;
+    height: 500px;
+    background: url('/static/images/whitecat.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin:10px;
+    border-radius: 10px;
+}
+
+#register-pet{
+    width: 400px;
+    height: 500px;
+    background: url('/static/images/orangedog.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}

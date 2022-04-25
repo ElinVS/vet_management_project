@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section>   
-<a href="/owners/register_owner"><h1>Register New Owner</h1></a>
+<section class="register">
+
+    <div id="register-owner">
+        <a href="/owners/register_owner"><h1>Register New Owner</h1></a>
+    </div>
+
+    <div id="register-pet">
+        <a href="/pets/register_pet"><h1>Register Pet</h1></a>
+    </div>
 </section> 
-
-<a href="/pets/register_pet"><h1>Register Pet</h1></a>
-
 
 {% endblock %}
