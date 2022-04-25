@@ -12,17 +12,31 @@ the overview needs to include pet name species dob owner vet
 Marvin / Dog / 01-02-2017 / Alex Anderson / Peter Peterson
 
 {% for pet in all_pets%}
-{% for owner in all_owners%}
 
-{{pet.name}}
-{{pet.species}}
+<ul>
+    <li>
+        {{pet.name}}
+    </li>
+    <li>
+        {{pet.species}}
+    </li>
+    <li>
+        {{pet.owner.first_name}}
+        {{pet.owner.last_name}}
+    </li>
 
-{{owner.first_name}} 
-{{owner.last_name}} 
+
+
+</ul>
+
+
+
+
+
 
 
 {% endfor %} 
-{% endfor %} 
+
 
 
 {% endblock %}

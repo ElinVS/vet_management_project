@@ -32,4 +32,4 @@ def register_new_pet():
 def view_all_pets():
     pets = pet_repository.select_all()
     owners = owner_repository.select_all()
-    return render_template('/pets/view_all.html', all_pets=pets, all_owners=owners)
+    return render_template('/pets/view_all.html', all_pets=pets, owners=owners)

@@ -2,9 +2,11 @@
 
 from models.owner import Owner
 from models.pet import Pet
+from models.vet import Vet
 
 import repositories.owner_repository as owner_repository
 import repositories.pet_repository as pet_repository
+import repositories.vet_repository as vet_repository
 
 owner_repository.delete_all()
 pet_repository.delete_all()
@@ -21,6 +23,12 @@ pet_2 = Pet("Milo", "Cat", "02-02-2012", owner_2, "Persistant skin infection on 
 
 pet_repository.save(pet_1)
 pet_repository.save(pet_2)
+
+vet_1 = Vet("Dr.Peter", "Peterson", "Small animal surgery")
+vet_2 = Vet("Dr.Fergus", "Ferguson", "Dentistry")
+
+vet_repository.save(vet_1)
+vet_repository.save(vet_2)
 
 # test_owner_selectall = owner_repository.select_all()
 # print(test_owner_selectall[1].__dict__)
