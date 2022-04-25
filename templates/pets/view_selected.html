@@ -1,19 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-overview of pet:
-
-name, species, dob, Vet
-
-section for owner details 
-
-
-then treatment notes by
-
-
-this page will show all the pets details that you selected including treatment notes
-
-From here you can also update and delete a record.
+<h1>VIEW SELECTED PET</h1>
 
 <table>
     <tr>
@@ -23,23 +11,45 @@ From here you can also update and delete a record.
         <th>Vet</th>
     </tr>
 
+    <tr>
+        <td>{{pet.name}}</td>
+        <td>{{pet.species}}</td>
+        <td>{{pet.dob}}</td>
+        <td>
+        {{pet.vet.first_name}} {{pet.vet.last_name}}</td>
+    </tr>
+</table>
 
 
-<tr>
-    <td>{{pet.name}}</td>
-    <td>{{pet.species}}</td>
-    <td>{{pet.dob}}</td>
-    <td> {{pet.owner.first_name}} {{pet.owner.last_name}}</td>
-    <td>
-        {{pet.vet.first_name}} {{pet.vet.last_name}}
-    </td>
-</tr>
+<a href="/pets/{{ pet.id }}/edit">HAHHAHA I AM UGLY LINK </a>
+<hr>
 
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Adress</th>
+        <th>Postcode</th>
+    </tr>
 
+    <tr>
+        <td>{{pet.owner.first_name}}</td>
+        <td>{{pet.owner.last_name}}</td>
+        <td>{{pet.owner.email}}</td>
+        <td>{{pet.owner.phone_number}}</td>
+        <td>{{pet.owner.adress}}</td>
+        <td>{{pet.owner.postcode}}</td>
+    </tr>
+   
 
 
 </table>
 
+
+<a href="/owners/{{ pet.owner.id }}/edit/pet/{{pet.id}}"> pet ID:::::: {{pet.owner.id}}  PET_OWNER_NAME:::: {{pet.owner.first_name}}</a>
+<hr>
 
 {{pet.treatment_notes}}
 

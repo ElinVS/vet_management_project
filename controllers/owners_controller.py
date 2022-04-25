@@ -3,6 +3,7 @@ from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.owner import Owner
 from repositories import owner_repository
+from repositories import pet_repository
 
 
 owners_blueprint = Blueprint("owners", __name__)
@@ -26,10 +27,24 @@ def register_new_owner():
     return redirect('/pets/register_pet')
 
 
-# @owners_blueprint.route('/')
-# def owners():
-#     owners = owner_repository.select_all()
-#     return render_template('index.html')
+@owners_blueprint.route('/owners/<id>/edit/pet/<pet_id>')
+def edit_form(id, pet_id):
+    owner = owner_repository.select(id)
+    return render_template('/owners/edit_owner.html', owner=owner, pet_id = pet_id)
 
+
+@owners_blueprint.route('/owners/<id>/edit',methods=['POST'])
+def update_owner_details(id):
+     first_name = request.form['first_name']
+     last_name = request.form['last_name']
+     email = request.form['email']
+     phone_number = request.form['phone_number']
+     adress = request.form['adress']
+     postcode = request.form['postcode']
+     pet_id = request.form['pet-id']
+     registered = True
+     update_owner = Owner(first_name, last_name, email,phone_number, adress, postcode, registered, id)
+     owner_repository.update(update_owner)
+     return redirect(f'/pets/{pet_id}')
 
 
