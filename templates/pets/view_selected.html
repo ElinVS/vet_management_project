@@ -15,6 +15,37 @@ this page will show all the pets details that you selected including treatment n
 
 From here you can also update and delete a record.
 
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Species</th>
+        <th>D.O.B</th>
+        <th>Vet</th>
+    </tr>
+
+
+
+<tr>
+    <td>{{pet.name}}</td>
+    <td>{{pet.species}}</td>
+    <td>{{pet.dob}}</td>
+    <td> {{pet.owner.first_name}} {{pet.owner.last_name}}</td>
+    <td>
+        {{pet.vet.first_name}} {{pet.vet.last_name}}
+    </td>
+</tr>
+
+
+
+
+</table>
+
+
+{{pet.treatment_notes}}
+
+
+
+
 
 
 

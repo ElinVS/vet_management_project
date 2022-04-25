@@ -3,7 +3,7 @@
 
 
 
-<form action="/pets/<id>" method="post">
+
 
 
 <table>
@@ -25,12 +25,17 @@
       <td>
           {{pet.vet.first_name}} {{pet.vet.last_name}}
       </td>
-      <td>  <button type="submit">Select</button>  </td>
+      <td>   <form action="/pets/{{ pet.id }}" method="post">
+        <input type="submit" value="Select"></form>
+    </td>
     </tr>
+
+   
+
 
   </table>
 
-</form>
+
 
 
        
