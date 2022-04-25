@@ -26,6 +26,8 @@ CREATE TABLE pets (
     species VARCHAR(255) NOT NULL,
     dob VARCHAR(255) NOT NULL,
     treatment_notes TEXT,
-    owner_id INT NOT NULL REFERENCES owners(id) ON DELETE CASCADE
+    owner_id INT NOT NULL REFERENCES owners(id) ON DELETE CASCADE,
+    vet_id INT NOT NULL REFERENCES vets(id)
+
 );
 

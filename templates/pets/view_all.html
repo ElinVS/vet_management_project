@@ -1,33 +1,38 @@
 {% extends "base.html" %}
 {% block content %}
 
-Patien Records:
-
-Here I want an overview of all patients currently registered to the practice
-
-more of a snapshot overview that you can then click into to get all the information aswell as update and delete.
-
-the overview needs to include pet name species dob owner vet
-
-Marvin / Dog / 01-02-2017 / Alex Anderson / Peter Peterson
-
-{% for pet in all_pets%}
-
-<ul>
-    <li>
-        {{pet.name}}
-    </li>
-    <li>
-        {{pet.species}}
-    </li>
-    <li>
-        {{pet.owner.first_name}}
-        {{pet.owner.last_name}}
-    </li>
 
 
 
-</ul>
+<table action="">
+    <tr>
+      <th>Pet</th>
+      <th>Species</th>
+      <th>D.O.B</th>
+      <th>Owner</th>
+      <th>Vet</th>
+    </tr>
+
+    {% for pet in all_pets%}
+
+    <tr>
+      <td>{{pet.name}}</td>
+      <td>{{pet.species}}</td>
+      <td>{{pet.dob}}</td>
+      <td> {{pet.owner.first_name}} {{pet.owner.last_name}}</td>
+      <td>
+          {{pet.vet.first_name}} {{pet.vet.last_name}}
+      </td>
+      <td>  <button type="submit">Select</button>  </td>
+    </tr>
+
+  </table>
+
+
+       
+    
+       
+  
 
 
 

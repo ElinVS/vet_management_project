@@ -1,5 +1,5 @@
 
-from flask import Blueprint, Flask, render_template, request
+from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.owner import Owner
 from repositories import owner_repository
@@ -21,10 +21,9 @@ def register_new_owner():
     phone_number = request.form['phone_number']
     adress = request.form['adress']
     postcode = request.form['postcode']
-
     owner_object = Owner(first_name, last_name, email, phone_number, adress, postcode, registered= True)
     owner_repository.save(owner_object)
-    return render_template('/pets/register_pet.html')
+    return redirect('/pets/register_pet')
 
 
 # @owners_blueprint.route('/')

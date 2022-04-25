@@ -3,8 +3,10 @@ from flask import Blueprint, Flask, render_template, request
 
 from models.pet import Pet
 from models.owner import Owner
+from models.vet import Vet
 from repositories import pet_repository
 from repositories import owner_repository
+from repositories import vet_repository
 
 
 pets_blueprint = Blueprint("pets", __name__)
@@ -12,14 +14,15 @@ pets_blueprint = Blueprint("pets", __name__)
 @pets_blueprint.route('/pets/register_pet')
 def register_new_pet_form():
     owners = owner_repository.select_all()
-    return render_template('/pets/register_pet.html', owners=owners)
+    vets = vet_repository.select_all()
+    return render_template('/pets/register_pet.html', owners=owners, vets=vets)
 
 
 @pets_blueprint.route("/pets/view_all", methods=['POST'])
 def register_new_pet():
     name = request.form['name']
     species = request.form['species']
-    dob = request.form['dob']
+    dob = str(request.form['dob'])
     owner_id = request.form['owner_id']
     owners = owner_repository.select_all()
     owner= owner_repository.select(owner_id)
