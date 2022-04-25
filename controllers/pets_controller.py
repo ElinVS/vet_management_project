@@ -36,3 +36,9 @@ def view_all_pets():
     pets = pet_repository.select_all()
     owners = owner_repository.select_all()
     return render_template('/pets/view_all.html', all_pets=pets, owners=owners)
+
+@pets_blueprint.route('/pets/<id>', methods=['GET'])
+def view_selected_pet(id):
+    pet = pet_repository.select(id)
+    return render_template('/pets/view_selected.html', pet=pet)
+
