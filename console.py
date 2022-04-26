@@ -3,10 +3,12 @@
 from models.owner import Owner
 from models.pet import Pet
 from models.vet import Vet
+from models.note import Note
 
 import repositories.owner_repository as owner_repository
 import repositories.pet_repository as pet_repository
 import repositories.vet_repository as vet_repository
+import repositories.note_repository as note_repository
 
 owner_repository.delete_all()
 pet_repository.delete_all()
@@ -27,11 +29,14 @@ owner_repository.save(owner_1)
 owner_repository.save(owner_2)
 
 
-pet_1 = Pet("Marvin", "Dog", "01-02-2017", owner_1, "Re-curring stomach issues. Last working treatment was on 03-03-2022", vet_1)
-pet_2 = Pet("Milo", "Cat", "02-02-2012", owner_2, "Persistant skin infection on left paw. Last treatment given 02-03-2022", vet_2)
+pet_1 = Pet("Marvin", "Dog", "01-02-2017", owner_1 ,vet_1)
+pet_2 = Pet("Milo", "Cat", "02-02-2012", owner_2, vet_2)
 
 pet_repository.save(pet_1)
 pet_repository.save(pet_2)
+
+note_1= Note("Treated for kennel cough 01-02-2022", pet_1)
+note_repository.save(note_1)
 
 
 

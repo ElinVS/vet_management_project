@@ -38,11 +38,6 @@ def view_selected_vet(id):
     
     vet = vet_repository.select(id)
     pets = vet_repository.select_pets_of_vet(vet)
-    for pet in pets: 
-        print("I ama pet dictionary !!")
-        print(pet.__dict__)
-
-
     return render_template('/vets/view_selected.html', vet=vet,pets=pets)
 
 

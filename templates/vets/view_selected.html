@@ -19,9 +19,6 @@
 <a href="/vets/{{ vet.id }}/edit">
     <button type="submit">Edit</button></a>
 
-    
-
-    
 
     <form action="/vets/{{ vet.id }}/delete" method="POST">
         <input type="submit" value="Delete">
@@ -33,20 +30,11 @@
 
     <a href="/pets/{{ pet.id }}">{{ pet.name }} </a>
 
-    
 
     {% endfor %}
-
-
 
 
 {% endblock %}
 
 
 
-<!-- <a href="/vets/{{ vet.id }}/edit">HAHHAHA I AM UGLY LINK </a> -->
-<hr>
-
-
-<!-- <a href="/owners/{{ pet.owner.id }}/edit/pet/{{pet.id}}"> pet ID:::::: {{pet.owner.id}}  PET_OWNER_NAME:::: {{pet.owner.first_name}}</a> -->
-<hr>

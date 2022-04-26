@@ -9,8 +9,8 @@ import repositories.vet_repository as vet_repository
 
 
 def save(pet):
-    sql = "INSERT INTO pets (name, species, dob, owner_id, treatment_notes, vet_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
-    values = [pet.name, pet.species, pet.dob, pet.owner.id, pet.treatment_notes, pet.vet.id]
+    sql = "INSERT INTO pets (name, species, dob, owner_id, vet_id) VALUES (%s, %s, %s, %s, %s) RETURNING id"
+    values = [pet.name, pet.species, pet.dob, pet.owner.id, pet.vet.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     pet.id = id
@@ -25,7 +25,7 @@ def select_all():
     for result in results:
         owner = owner_repository.select(result["owner_id"])
         vet = vet_repository.select(result["vet_id"])
-        pet = Pet(result["name"], result["species"],result["dob"], owner, result["treatment_notes"],vet, result["id"])
+        pet = Pet(result["name"], result["species"], result["dob"], owner,vet, result["id"])
         pets.append(pet)
     return pets
 
@@ -35,7 +35,7 @@ def select(id):
     result = run_sql(sql, values)[0]
     owner = owner_repository.select(result["owner_id"])
     vet = vet_repository.select(result["vet_id"])
-    pet = Pet(result["name"], result["species"],result["dob"], owner, result["treatment_notes"],vet, result["id"])
+    pet = Pet(result["name"], result["species"],result["dob"], owner,vet, result["id"])
     return pet
 
 
@@ -50,10 +50,9 @@ def delete(id):
 
 
 def update(pet):
-    sql = "UPDATE pets SET (name, species, dob, owner_id, treatment_notes, vet_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [pet.name, pet.species, pet.dob, pet.owner.id, pet.treatment_notes, pet.vet.id, pet.id]
+    sql = "UPDATE pets SET (name, species, dob, owner_id, vet_id) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [pet.name, pet.species, pet.dob, pet.owner.id, pet.vet.id, pet.id]
     run_sql(sql, values)
 
 
-# def save_notes():
-#     sql = 
+

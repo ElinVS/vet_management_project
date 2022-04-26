@@ -27,8 +27,7 @@ def register_new_pet():
     vet_id = request.form['vet_id']
     owner= owner_repository.select(owner_id)
     vet=vet_repository.select(vet_id)
-    treatment_notes=False
-    pet= Pet(name, species, dob, owner, treatment_notes,vet)
+    pet= Pet(name, species, dob, owner,vet,id)
     pet_repository.save(pet)
     return redirect('/pets/view_all')
 
@@ -64,8 +63,7 @@ def update_pet_details(id):
     vet_id=request.form['vet_id']
     owner= owner_repository.select(owner_id)
     vet=vet_repository.select(vet_id)
-    treatment_notes=False
-    update_pet = Pet(name, species, dob, owner, treatment_notes, vet, id)
+    update_pet = Pet(name, species, dob, owner, vet, id)
     pet_repository.update(update_pet)
     return redirect(f'/pets/{id}')
 
@@ -75,25 +73,6 @@ def delete_pet(id):
      return redirect('/pets/view_all')
 
 
-@pets_blueprint.route('/pets/<id>/add_treatment', methods=['POST'])
-def add_notes():
-    treatment_notes = request.form['treatment-notes']
-    pet= Pet(treatment_notes,id)
-    pet_repository.save(pet)
-    return redirect('/pets/<id>')
 
 
 
-# @pets_blueprint.route("/pets/view_all", methods=['POST'])
-# def register_new_pet():
-#     name = request.form['name']
-#     species = request.form['species']
-#     dob = str(request.form['dob'])
-#     owner_id = request.form['owner_id']
-#     vet_id = request.form['vet_id']
-#     owner= owner_repository.select(owner_id)
-#     vet=vet_repository.select(vet_id)
-#     treatment_notes=False
-#     pet= Pet(name, species, dob, owner, treatment_notes,vet)
-#     pet_repository.save(pet)
-#     return redirect('/pets/view_all')

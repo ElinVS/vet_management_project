@@ -59,8 +59,8 @@ def select_pets_of_vet(vet):
     for result in results:
         owner = owner_repository.select(result["owner_id"])
        
-        treatment_notes=False
-        pet_object = Pet(result['name'], result['species'], result['dob'], owner, treatment_notes, vet, result['id'])
+        
+        pet_object = Pet(result['name'], result['species'], result['dob'], owner, vet, result['id'])
         pets.append(pet_object)
     return pets
 
