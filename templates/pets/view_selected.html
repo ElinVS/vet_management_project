@@ -21,7 +21,7 @@
 </table>
 
 
-<a href="/pets/{{ pet.id }}/edit">HAHHAHA I AM UGLY LINK </a>
+<a href="/pets/{{ pet.id }}/edit">Edit</a>
 <hr>
 
 <table>
@@ -48,7 +48,7 @@
 </table>
 
 
-<a href="/owners/{{ pet.owner.id }}/edit/pet/{{pet.id}}"> pet ID:::::: {{pet.owner.id}}  PET_OWNER_NAME:::: {{pet.owner.first_name}}</a>
+<a href="/owners/{{ pet.owner.id }}/edit/pet/{{pet.id}}"> <button type="submit">Edit</button></a>
 <hr>
 
 {{pet.treatment_notes}}
@@ -60,3 +60,7 @@
 
 
 {% endblock %}
+
+
+
+pet ID:::::: {{pet.owner.id}}  PET_OWNER_NAME:::: {{pet.owner.first_name}}

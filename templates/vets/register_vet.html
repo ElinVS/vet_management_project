@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+<form action="/vets/veterinarians" method="post">
+    <div>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" placeholder="First Name" required>   
+    </div>
+      
+    <div>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+    </div>
+
+    <div>
+        <label for="speciality">Speciality:</label>
+        <input type="text" id="speciality" name="speciality" placeholder="Speciality" required>
+    </div>
+
+    <button type="submit">Register</button> 
+
+</form>
+
+
+
+
+{% endblock %}

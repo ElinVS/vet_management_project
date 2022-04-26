@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+
+
+
+<table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Speciality</th>
+      
+    </tr>
+
+    {% for vet in vets%}
+
+    <tr>
+      <td>{{vet.first_name}}</td>
+      <td>{{vet.last_name}}</td>
+      <td>{{vet.speciality}}</td>
+
+        <a href="/vets/{{ vet.id }}">SELECT  </a>
+    </td>
+    </tr>
+
+</table>
+
+{% endfor %} 
+
+
+
+{% endblock %}

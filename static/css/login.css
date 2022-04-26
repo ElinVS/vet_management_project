@@ -46,12 +46,13 @@ button[type=submit] {
     width: 30%;
     cursor:pointer;
     font-family: 'Nunito', sans-serif;
+    background-color: #4ba7e4;
 
 }
 
-button[type=submit]:hover {
+/* button[type=submit]:hover {
     background: #ff6a0e;
-}
+} */
 
 
 

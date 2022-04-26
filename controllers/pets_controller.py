@@ -1,5 +1,5 @@
 
-from flask import Blueprint, Flask, render_template, request
+from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.pet import Pet
 from models.owner import Owner
@@ -24,11 +24,16 @@ def register_new_pet():
     species = request.form['species']
     dob = str(request.form['dob'])
     owner_id = request.form['owner_id']
-    owners = owner_repository.select_all()
+    vet_id = request.form['vet_id']
+    # owners = owner_repository.select_all()  #can I take this line out?
     owner= owner_repository.select(owner_id)
-    pet= Pet(name, species, dob, owner, treatment_notes=False)
+    vet=vet_repository.select(vet_id)
+    treatment_notes=False
+    pet= Pet(name, species, dob, owner, treatment_notes,vet)
     pet_repository.save(pet)
-    return render_template('/pets/view_all.html', owners=owners )
+    return redirect('/pets/view_all')
+
+    # owners=owners
 
 
 @pets_blueprint.route('/pets/view_all')
@@ -41,4 +46,10 @@ def view_all_pets():
 def view_selected_pet(id):
     pet = pet_repository.select(id)
     return render_template('/pets/view_selected.html', pet=pet)
+
+
+@pets_blueprint.route('/pets/<id>/edit')
+def edit_form(id):
+    pet = pet_repository.select(id)
+    return render_template('/pets/edit_pet.html', pet=pet)
 
