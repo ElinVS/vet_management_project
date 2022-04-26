@@ -8,7 +8,6 @@ import repositories.vet_repository as vet_repository
 
 
 
-
 def save(pet):
     sql = "INSERT INTO pets (name, species, dob, owner_id, treatment_notes, vet_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
     values = [pet.name, pet.species, pet.dob, pet.owner.id, pet.treatment_notes, pet.vet.id]
@@ -54,3 +53,7 @@ def update(pet):
     sql = "UPDATE pets SET (name, species, dob, owner_id, treatment_notes, vet_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [pet.name, pet.species, pet.dob, pet.owner.id, pet.treatment_notes, pet.vet.id, pet.id]
     run_sql(sql, values)
+
+
+# def save_notes():
+#     sql = 

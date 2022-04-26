@@ -20,8 +20,14 @@
       <td>{{vet.first_name}}</td>
       <td>{{vet.last_name}}</td>
       <td>{{vet.speciality}}</td>
+      <td>
+        <a href="/vets/{{ vet.id }}">
+            <button type="submit">SELECT  </button>
 
-        <a href="/vets/{{ vet.id }}">SELECT  </a>
+            
+
+
+        </a>
     </td>
     </tr>
     {% endfor %} 

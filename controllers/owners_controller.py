@@ -48,3 +48,10 @@ def update_owner_details(id):
      return redirect(f'/pets/{pet_id}')
 
 
+@owners_blueprint.route("/owners/<id>/delete", methods=["POST"])
+def delete_owner(id):
+    owner_repository.delete(id)
+    return redirect('/pets/view_all')
+
+
+     

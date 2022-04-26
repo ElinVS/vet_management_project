@@ -12,15 +12,29 @@
     <tr>
         <td>{{vet.first_name}}</td>
         <td>{{vet.last_name}}</td>
+        <td>{{vet.speciality}}</td>
     </tr>
 </table>
 
-<h3>Pets</h3>
+<a href="/vets/{{ vet.id }}/edit">
+    <button type="submit">Edit</button></a>
+
+    
+
+    
+
+    <form action="/vets/{{ vet.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+
+<h3>Pets assigned to Vet</h3>
 
     {% for pet in pets %}
 
-    {{ pet.name }}
+    <a href="/pets/{{ pet.id }}">{{ pet.name }} </a>
+
     
+
     {% endfor %}
 
 

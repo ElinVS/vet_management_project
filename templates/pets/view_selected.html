@@ -24,7 +24,17 @@
 <a href="/pets/{{ pet.id }}/edit">
     <button type="submit">Edit</button></a>
 
-<a href=""></a>
+    
+
+    
+
+    <form action="/pets/{{ pet.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+
+    
+    
+    
 
 
 <hr>
@@ -54,18 +64,28 @@
 
 
 <a href="/owners/{{ pet.owner.id }}/edit/pet/{{pet.id}}"> <button type="submit">Edit</button></a>
-<hr>
+
+<form action="/owners/{{ pet.owner.id }}/delete" method="POST">
+    <input type="submit" value="Delete">
+</form>
+
+
+
+
+View treatment notes
 
 {{pet.treatment_notes}}
 
 
-
-
-
+<form action="/pets/{{ pet.id }}/add_treatment" method="POST"></form>
+    <textarea name="treatment-nots" id="treatment-notes" cols="20" rows="10">
+    </textarea>
+    <input type="submit" value="Add treatment notes">
+</form>
 
 
 {% endblock %}
 
 
 
-pet ID:::::: {{pet.owner.id}}  PET_OWNER_NAME:::: {{pet.owner.first_name}}
+

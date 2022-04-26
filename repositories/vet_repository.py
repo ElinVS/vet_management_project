@@ -28,9 +28,7 @@ def select_all():
 def select(id):
     sql = "SELECT * FROM vets WHERE id = %s"
     values = [id]
-    print(values)
     result = run_sql(sql,values)[0]
-    
     vet = Vet(result["first_name"], result["last_name"], result["speciality"],result["id"])
     return vet
 
@@ -57,15 +55,13 @@ def select_pets_of_vet(vet):
     sql = "SELECT pets.* FROM pets INNER JOIN vets ON pets.vet_id = vets.id WHERE vets.id= %s"
     values = [vet.id]
     results = run_sql(sql, values)
-    print(results)
 
     for result in results:
         owner = owner_repository.select(result["owner_id"])
        
         treatment_notes=False
-        pet_object = Pet(result['name'], result['species'], result['dob'], owner, treatment_notes, vet )
+        pet_object = Pet(result['name'], result['species'], result['dob'], owner, treatment_notes, vet, result['id'])
         pets.append(pet_object)
-    print(pets)
     return pets
 
 

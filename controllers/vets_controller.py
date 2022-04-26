@@ -37,9 +37,34 @@ def register_new_vet():
 def view_selected_vet(id):
     
     vet = vet_repository.select(id)
-    print(vet)
     pets = vet_repository.select_pets_of_vet(vet)
-    print(pets)
+    for pet in pets: 
+        print("I ama pet dictionary !!")
+        print(pet.__dict__)
+
+
     return render_template('/vets/view_selected.html', vet=vet,pets=pets)
 
+
+@vets_blueprint.route('/vets/<id>/edit')
+def edit_form(id):
+    vet = vet_repository.select(id)
+    return render_template('/vets/edit_vet.html', vet=vet)
+
+
+@vets_blueprint.route('/vets/<id>',methods=['POST'])
+def update_vet_details(id):
+    first_name = request.form['first-name']
+    last_name = request.form['last-name']
+    speciality = request.form['speciality']
+    
+    update_vet = Vet(first_name, last_name, speciality, id)
+    vet_repository.update(update_vet)
+    return redirect(f'/vets/{id}')
+
+
+@vets_blueprint.route('/vets/<id>/delete', methods=['POST'])
+def delete_vet(id):
+     vet_repository.delete(id)
+     return redirect('/vets/veterinarians')
 
