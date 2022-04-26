@@ -5,7 +5,6 @@ body {
     background-position: left;
     background-repeat: no-repeat;
     background-size: contain;
-
 }
 
 .login-container {
@@ -17,12 +16,14 @@ body {
 #box {
     width:300px;
     height:300px;
-    background-color: #4ba7e4;
+    background-color: #989788;
     border-radius: 20px;
     text-align: center;
     font-family: 'Nunito', sans-serif;
     font-size: large;
 }
+
+
 
 input[type=text] {
     margin:20px 20px 0px 20px;
@@ -41,18 +42,18 @@ button[type=submit] {
    
     margin:35px 20px 0px 20px;
     padding:10px;
-    border-color: transparent;
+    border-color: #7a796e;
     border-radius: 10px;
     width: 30%;
     cursor:pointer;
     font-family: 'Nunito', sans-serif;
-    background-color: #4ba7e4;
+    background-color: #989788;
 
 }
 
 /* button[type=submit]:hover {
     background: #ff6a0e;
-} */
+} */#4ba7e4
 
 
 

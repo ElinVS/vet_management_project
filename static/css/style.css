@@ -1,9 +1,10 @@
 body {
-    background:#FBFEF9;
+    background:#C0C5C1;
 }
 
 
 .header > ul  {
+    /* background-color: #ccd1cd; */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -46,6 +47,7 @@ table, th, td {
     background-repeat: no-repeat;
     margin:10px;
     border-radius: 10px;
+    box-shadow:5px 5px 5px 5px #b8bcb9;
 }
 
 #register-pet{
@@ -57,10 +59,118 @@ table, th, td {
     background-repeat: no-repeat;
     margin: 10px;
     border-radius: 10px;
+    box-shadow:5px 5px 5px 5px #b8bcb9;
+}
+
+.vets{
+    display:flex;    
+    flex-flow: row wrap;
+    justify-content: center; 
+    align-items:center;
+    gap: 20px;
+    flex-grow: 4;
+    text-align: center;
+
+}
+
+#register-vet {
+    width: 400px;
+    height: 500px;
+    background: url('/static/images/dogwithtoy.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin:10px;
+    border-radius: 10px;
+    box-shadow:5px 5px 5px 5px #b8bcb9;
+
+}
+
+#veterinarians {
+    width: 400px;
+    height: 500px;
+    background: url('/static/images/bluecat.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin:10px;
+    border-radius: 10px;
+    box-shadow:5px 5px 5px 5px #b8bcb9;
+
 }
 
 a {
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: black;
+    cursor: pointer;
 }
+
+a:hover{
+    color:white; ;
+}
+
+.home-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: auto auto; 
+    grid-gap: 20px; 
+    grid-auto-flow: column;
+    margin-left: 30%;
+    margin-top: 4%;
+    font-family: 'Lato', sans-serif;
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+#blue {
+    width:250px;
+    height:250px;
+    background: url('/static/images/bottomcat.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow:5px 5px 5px 5px #b8bcb9;
+    
+}
+
+#green {
+    width:250px;
+    height:250px;
+    background: url('/static/images/littlebulldog.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow:5px 5px 5px 5px #b8bcb9;
+}
+
+#yellow {
+    width:250px;
+    height:250px;
+    background: url('/static/images/bluecat.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow:5px 5px 5px 5px #b8bcb9;
+}
+
+#red {
+    width:250px;
+    height:250px;
+    background: url('/static/images/bottomdog.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow:5px 5px 5px 5px #b8bcb9;
+}
+
+
+
+/* FBFEF9 */

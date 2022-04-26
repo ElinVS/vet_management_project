@@ -5,8 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{Title}} Pet Buddy</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+   
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">    
 </head>
@@ -22,8 +26,62 @@
                 </ul>
             </div>
         </nav>
+
+       
+
+
+
+
+
+
     </header>
     {% block content %}
+
+    <div class="home-container">
+        <div id="blue">
+            <a href="/register"><h1>Register</h1></a>
+            
+            <ul>
+                <li>Register a new owner</li>
+                <li>Register a new Pet to an existing owner</li>
+            </ul>
+            
+        </div>
+        <div id="green">
+            <h1>Pet Records</h1>
+            <ul>
+                <li>View all Pets</li>
+                <li>Select a pet and view all its details</li>
+                <li>View each pets treatment notes</li>
+            </ul>
+        </div>
+        <div id="yellow">
+            <h1>Veterinarians</h1>
+            <ul>
+                <li>Register a new veterinarian</li>
+                <li>View all veterinarians</li>
+                <li>View all pets assigned to each veterinarian</li>
+            </ul>
+
+            
+        </div>
+        <div id="red">
+            <h1>Appointment</h1>
+            <ul>
+                <li>Book an appointment</li>
+                <li>View todays appointments</li>
+            </ul>
+
+
+
+        </div>
+    
+        
+    
+    
+    </div>
+
+    
     
     {% endblock %}  
 </body>

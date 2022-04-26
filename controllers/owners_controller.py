@@ -35,23 +35,20 @@ def edit_form(id, pet_id):
 
 @owners_blueprint.route('/owners/<id>/edit',methods=['POST'])
 def update_owner_details(id):
-     first_name = request.form['first_name']
-     last_name = request.form['last_name']
-     email = request.form['email']
-     phone_number = request.form['phone_number']
-     adress = request.form['adress']
-     postcode = request.form['postcode']
-     pet_id = request.form['pet-id']
-     registered = True
-     update_owner = Owner(first_name, last_name, email,phone_number, adress, postcode, registered, id)
-     owner_repository.update(update_owner)
-     return redirect(f'/pets/{pet_id}')
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    email = request.form['email']
+    phone_number = request.form['phone_number']
+    adress = request.form['adress']
+    postcode = request.form['postcode']
+    pet_id = request.form['pet-id']
+    registered = True
+    update_owner = Owner(first_name, last_name, email,phone_number, adress, postcode, registered, id)
+    owner_repository.update(update_owner)
+    return redirect(f'/pets/{pet_id}')
 
 
 @owners_blueprint.route("/owners/<id>/delete", methods=["POST"])
 def delete_owner(id):
     owner_repository.delete(id)
     return redirect('/pets/view_all')
-
-
-     
