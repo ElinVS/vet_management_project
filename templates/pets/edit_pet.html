@@ -10,7 +10,7 @@
     </div>
   
     <div>
-      <label for="species">Last Name:</label>
+      <label for="species">Species:</label>
       <input type="species" id="species" name="species" value="{{pet.species}}" required>
     </div>
   
@@ -19,12 +19,9 @@
       <input type="dob" id="dob" name="dob" value="{{pet.dob}}" required>
     </div>
   
-    <div>
-      <label for="owner">Owner:</label>
-      <input type="owner" id="owner" name="owner" value="{{pet.owner.first_name}}" required>
-    </div>
 
-    label for="owner">Owner:</label>
+
+    <label for="owner">Owner:</label>
         <select id="owner" name="owner_id">
           {% for owner in owners %}
           <option value="{{owner.id}}">{{owner.first_name}} {{owner.last_name}}</option>
@@ -32,20 +29,40 @@
         </select>
 
 
-
-
-  
     <div>
-      <label for="vet">Vet:</label>
-      <input type="vet" id="vet" name="vet" value="{{pet.vet.first_name}}" required>
-    </div>
-  
-    
-  
-  <form action="/pets/{{ pet.id }}" method="POST">
+        <label for="vet">Assign Vet:</label>
+        <select id="vet" name="vet_id">
+          {% for vet in vets %}
+          <option value="{{vet.id}}">{{vet.first_name}} {{vet.last_name}}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      
+      
       <input type="submit" value="Update Pet Details">
-  </form> 
-  
-  </form>
-  
-  {% endblock %}
+
+</form> 
+
+</form>
+
+{% endblock %}
+
+
+
+
+      <!-- <div>
+      <label for="owner">Owner:</label>
+      <input type="owner" id="owner" name="owner" value="{{pet.owner.first_name}}" required>
+    </div> -->
+
+
+    <!-- <div>
+        <label for="vet">Vet:</label>
+        <input type="vet" id="vet" name="vet" value="{{pet.vet.first_name}}" required>
+      </div> -->
+
+
+
+      <!-- <form action="/pets/{{ pet.id }}" method="POST">
+        <input type="submit" value="Update Pet Details"> -->

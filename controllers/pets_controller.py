@@ -51,5 +51,23 @@ def view_selected_pet(id):
 @pets_blueprint.route('/pets/<id>/edit')
 def edit_form(id):
     pet = pet_repository.select(id)
-    return render_template('/pets/edit_pet.html', pet=pet)
+    owners = owner_repository.select_all()
+    vets = vet_repository.select_all()
+    return render_template('/pets/edit_pet.html', pet=pet, owners=owners, vets=vets)
 
+
+@pets_blueprint.route('/pets/<id>',methods=['POST'])
+def update_pet_details(id):
+    name = request.form['name']
+    species = request.form['species']
+    dob = str(request.form['dob'])
+    owner_id = request.form['owner_id']
+    vet_id=request.form['vet_id']
+    owner= owner_repository.select(owner_id)
+    vet=vet_repository.select(vet_id)
+    treatment_notes=False
+    update_pet = Pet(name, species, dob, owner, treatment_notes, vet, id)
+    pet_repository.update(update_pet)
+    return redirect(f'/pets/{id}')
+
+# return redirect(f'/pets/{pet_id}')
