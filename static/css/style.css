@@ -1,7 +1,13 @@
 body {
-    background:#C0C5C1;
+    background-image: url('/static/images/blackdog.jpg');
+    background-color: #ccd1cd;
+    min-height: 500px;
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    
 }
-
 
 .header > ul  {
     /* background-color: #ccd1cd; */
@@ -14,21 +20,63 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: x-large;
     padding: 10px; 
-    /* min-height: 100px;  */
-    
     align-items: flex-end;
-    /* gap: 60px; */
     list-style: none;
 }
 
-
-table, th, td {
-    border: 1px solid black;
+.view-pets, th, td {
+    border: 1px  black;
     border-collapse: collapse;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
     font-family: 'Lato', sans-serif;
-    margin-left: 250px;
+    text-align: left;
+    margin-left: 580px;
+}
+
+.selected-pet, th, td {
+    border: 1px  black;
+    border-collapse: collapse;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: 'Lato', sans-serif;
+    text-align: left;
+    margin-left: 580px;
+    
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    padding:10px;
+}
+
+#owner-name {
+    margin-left: 230px;
+    font-family: 'Lato', sans-serif;
+}
+
+#owners-pet {
+    margin-left: 320px;
+    font-family: 'Lato', sans-serif;
+}
+
+#pet-name {
+    font-family: 'Lato', sans-serif;
+    margin-left: 80px ;
+}
+
+#pet-link {
+    margin-left: 600px;
+    font-size: medium;
+}
+
+
+tr:hover {
+    background-color:#e2e7e3;
+
 }
 
 .register {
@@ -43,75 +91,74 @@ table, th, td {
 }
 
 #register-owner {
-    width: 400px;
-    height: 500px;
-    background: url('/static/images/whitecat.jpg');
+    width: 250px;
+    height: 250px;
+    background-image: url('/static/images/bwdog.jpg');
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
-    margin:10px;
+    background-repeat:no-repeat;
+    margin-top: 150px;
+    margin-left: 580px;
     border-radius: 10px;
-    box-shadow:5px 5px 5px 5px #b8bcb9;
-}
+    
+} 
 
 #register-pet{
-    width: 400px;
-    height: 500px;
-    background: url('/static/images/orangedog.jpg');
+    width: 250px;
+    height: 250px;
+    background-image: url('/static/images/bwdog.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    margin: 10px;
+    margin-top: 150px;
+    margin-left: 50px;
     border-radius: 10px;
-    box-shadow:5px 5px 5px 5px #b8bcb9;
-}
+    
+} 
 
 .vets{
     display:flex;    
     flex-flow: row wrap;
     justify-content: center; 
-    align-items:center;
-    gap: 20px;
+    align-items:flex-end;
+    gap: 10px;
     flex-grow: 4;
     text-align: center;
-
 }
 
 #register-vet {
-    width: 400px;
-    height: 500px;
-    background: url('/static/images/dogwithtoy.jpg');
+    width: 250px;
+    height: 250px;
+    background: url('/static/images/bottomcat.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    margin:10px;
-    border-radius: 10px;
-    box-shadow:5px 5px 5px 5px #b8bcb9;
-
+    margin-top: 150px;
+    margin-left: 580px;
+    border-radius: 10px
 }
 
 #veterinarians {
-    width: 400px;
-    height: 500px;
-    background: url('/static/images/bluecat.jpg');
+    width: 250px;
+    height: 250px;
+    background: url('/static/images/bottomdog.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    margin:10px;
+    margin-top: 150px;
+    margin-left: 50px;
     border-radius: 10px;
-    box-shadow:5px 5px 5px 5px #b8bcb9;
-
 }
 
 a {
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
-    color: black;
+    color: #8b8f8c;
     cursor: pointer;
 }
 
 a:hover{
-    color:white; ;
+    color:rgb(184, 180, 180); ;
 }
 
 .home-container {
@@ -120,51 +167,16 @@ a:hover{
     grid-template-rows: auto auto; 
     grid-gap: 20px; 
     grid-auto-flow: column;
-    margin-left: 30%;
+    margin-left: 52%;
     margin-top: 4%;
-    font-family: 'Lato', sans-serif;
-    
+    font-family: 'Lato', sans-serif;  
 }
 
 h1 {
     text-align: center;
 }
 
-#blue {
-    width:250px;
-    height:250px;
-    background: url('/static/images/bottomcat.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    /* box-shadow:5px 5px 5px 5px #b8bcb9; */
-    
-}
-
-#green {
-    width:250px;
-    height:250px;
-    background: url('/static/images/littlebulldog.jpg');
-    background-position: bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    box-shadow:5px 5px 5px 5px #b8bcb9;
-}
-
-#yellow {
-    width:250px;
-    height:250px;
-    background: url('/static/images/bluecat.jpg');
-    background-position: top;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    box-shadow:5px 5px 5px 5px #b8bcb9;
-}
-
-#red {
+#reg {
     width:250px;
     height:250px;
     background: url('/static/images/bottomdog.jpg');
@@ -172,9 +184,58 @@ h1 {
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
-    box-shadow:5px 5px 5px 5px #b8bcb9;
+    font-family: 'Lato', sans-serif;  
+    
 }
 
 
+#pet {
+    width:250px;
+    height:250px;
+    background: url('/static/images/bottomdog.jpg');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
 
-/* FBFEF9 */
+#vet {
+    width:250px;
+    height:250px;
+    background: url('/static/images/bottomdog.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    
+}
+
+#app {
+    width:250px;
+    height:250px;
+    background: url('/static/images/bottomdog.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+#reg > ul {
+    list-style: none;
+    font-family: 'Lato', sans-serif; 
+}
+#pet > ul {
+    list-style: none;
+    font-family: 'Lato', sans-serif; 
+}
+
+#vet > ul {
+    list-style: none;
+    font-family: 'Lato', sans-serif; 
+}
+
+#app > ul {
+    list-style: none;
+    font-family: 'Lato', sans-serif; 
+}
+

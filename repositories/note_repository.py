@@ -26,7 +26,7 @@ def filter_notes_by_pet(pet):
         note_object = Note(result['note'],pet, result['id'])
         notes.append(note_object)
 
-    return notes
+    return reversed(notes)
 
     
 

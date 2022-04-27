@@ -2,7 +2,7 @@
 {% block content %}
 
 
-<table>
+<table class="view-pets">
     <tr>
       <th>Pet</th>
       <th>Species</th>
@@ -10,10 +10,12 @@
       <th>Owner</th>
       <th>Vet</th>
     </tr>
+    
 
     {% for pet in all_pets%}
 
     <tr>
+            
       <td>{{pet.name}}</td>
       <td>{{pet.species}}</td>
       <td>{{pet.dob}}</td>
@@ -22,6 +24,7 @@
           {{pet.vet.first_name}} {{pet.vet.last_name}}
       </td>
       <td>  
+          
         <a href="/pets/{{ pet.id }}">
             <button type="submit">Select</button>
         </a>

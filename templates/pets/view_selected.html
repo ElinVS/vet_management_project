@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>VIEW SELECTED PET</h1>
+<hgroup id="pet-name">
+    <h1>Pet: {{pet.name}}</h1>
+</hgroup>
 
-<table>
+
+<table class="selected-pet">
+   
     <tr>
         <th>Name</th>
         <th>Species</th>
@@ -18,28 +22,55 @@
         <td>
         {{pet.vet.first_name}} {{pet.vet.last_name}}</td>
     </tr>
+    
 </table>
 
+<table class="selected-pet">
+    <tr>
+        <th>
+            <em>
+            Treatment Notes
+            </em>
+
+
+        </th>
+    </tr>
+
+    {% for note in notes%}
+    <tr>
+        
+
+        <td> {{note.note}}</td>
+            
+            
+    </tr>
+    {% endfor %}
+
+</table>
+
+<section class="buttons">
 
 <a href="/pets/{{ pet.id }}/edit">
-    <button type="submit">Edit</button></a>
-
-    
-
-    
+    <button type="submit">Edit Pet</button></a>
 
     <form action="/pets/{{ pet.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
+        <input type="submit" value="Delete Pet">
     </form>
 
+    <a href="/pets/{{pet.id}}/notes/add_note"><button type="menu"</button>Add Treatment Note</a>
+
+</section>
+
     
     
+<hgroup id="owner-name"> 
+
+<h1>Owner: {{pet.owner.first_name}} {{pet.owner.last_name}}</h1>
+</hgroup> 
+
+
+<table class="selected-pet">
     
-
-
-<hr>
-
-<table>
     <tr>
         <th>First Name</th>
         <th>Last Name</th>
@@ -56,39 +87,36 @@
         <td>{{pet.owner.phone_number}}</td>
         <td>{{pet.owner.adress}}</td>
         <td>{{pet.owner.postcode}}</td>
+        
     </tr>
    
 
 
 </table>
 
-{% for note in notes%}
-
-{{note.note}}
-
-{% endfor %}
 
 
-
-
-{% for animal in pets %}
-
-    <a href="/pets/{{ animal.id }}">{{ animal.name }} </a>
-
-
-{% endfor %}
-
-
+<section class="buttons">
 <a href="/owners/{{ pet.owner.id }}/edit/pet/{{pet.id}}"> <button type="submit">Edit</button></a>
 
 <form action="/owners/{{ pet.owner.id }}/delete" method="POST">
     <input type="submit" value="Delete">
 </form>
+</section>
 
+<hgroup id="owners-pet">
+    <h1>All Pets Registered to Owner</h1>
+</hgroup>
 
+<div id="pet-link">
 
+{% for animal in pets %}
+    
+<a href="/pets/{{ animal.id }}">{{ animal.name }} </a>
+    
+{% endfor %}
 
-<a href="/pets/{{pet.id}}/notes/add_note"><button type="menu"</button>Add Treatment Note</a>
+</div>
 
 
 

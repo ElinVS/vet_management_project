@@ -19,7 +19,7 @@ def add_note_form(id):
 @notes_blueprint.route("/notes/pets/<pet_id>", methods=['POST'])
 def add_new_note(pet_id):
     note = request.form['note']
-    pet= pet_repository.select(id)
-    new_note = Note(note, pet, id)
+    pet= pet_repository.select(pet_id)
+    new_note = Note(note, pet)
     note_repository.save(new_note)
     return redirect(f'/pets/{pet_id}')

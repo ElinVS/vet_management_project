@@ -19,8 +19,13 @@
         <nav>
             <div class="header">
                 <ul>
+                    
+
                     <li> <a href="/home">Home</a></li>
                     <li> <a href="/register">Register</a></li>
+
+                    
+
                     <li> <a href="/pets/view_all">Pet Records</a></li>
                     <li> <a href="/vets">Veterinarians</a></li>
                 </ul>
@@ -38,7 +43,7 @@
     {% block content %}
 
     <div class="home-container">
-        <div id="blue">
+        <div id="reg">
             <a href="/register"><h1>Register</h1></a>
             
             <ul>
@@ -47,16 +52,18 @@
             </ul>
             
         </div>
-        <div id="green">
-            <h1>Pet Records</h1>
+        <div id="pet">
+            <a href="/pets/view_all"><h1>Pet Records</h1></a>
+            
             <ul>
                 <li>View all Pets</li>
                 <li>Select a pet and view all its details</li>
                 <li>View each pets treatment notes</li>
             </ul>
         </div>
-        <div id="yellow">
-            <h1>Veterinarians</h1>
+        <div id="vet">
+            <a href="/vets"><h1>Veterinarians</h1></a>
+            
             <ul>
                 <li>Register a new veterinarian</li>
                 <li>View all veterinarians</li>
@@ -65,8 +72,9 @@
 
             
         </div>
-        <div id="red">
-            <h1>Appointment</h1>
+        <div id="app">
+            <a href="/home"><h1>Appointment</h1></a>
+            
             <ul>
                 <li>Book an appointment</li>
                 <li>View todays appointments</li>
