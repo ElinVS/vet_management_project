@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form action="/pets/{{pet.id}}" method="post">
-    <textarea name="notes" id="notes" cols="30" rows="10"></textarea>
+<form action="/notes/pets/{{pet.id}}" method="post">
+    <textarea name="note" id="note" cols="30" rows="10"></textarea>
     <input type="submit" value="Add Treatment Note">
 </form>
 

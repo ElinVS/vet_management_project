@@ -62,6 +62,22 @@
 
 </table>
 
+{% for note in notes%}
+
+{{note.note}}
+
+{% endfor %}
+
+
+
+
+{% for animal in pets %}
+
+    <a href="/pets/{{ animal.id }}">{{ animal.name }} </a>
+
+
+{% endfor %}
+
 
 <a href="/owners/{{ pet.owner.id }}/edit/pet/{{pet.id}}"> <button type="submit">Edit</button></a>
 
@@ -72,7 +88,7 @@
 
 
 
-<a href="/notes/add_note"><button type="menu"</button>Add Treatment Note</a>
+<a href="/pets/{{pet.id}}/notes/add_note"><button type="menu"</button>Add Treatment Note</a>
 
 
 

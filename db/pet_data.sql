@@ -34,6 +34,6 @@ CREATE TABLE pets (
 CREATE TABLE notes (
     id SERIAL PRIMARY KEY,
     note TEXT,
-    pet_id INT NOT NULL REFERENCES pets(id)
+    pet_id INT NOT NULL REFERENCES pets(id) ON DELETE CASCADE
 );
 

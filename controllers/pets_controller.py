@@ -4,9 +4,11 @@ from flask import Blueprint, Flask, redirect, render_template, request
 from models.pet import Pet
 from models.owner import Owner
 from models.vet import Vet
+from models.note import Note
 from repositories import pet_repository
 from repositories import owner_repository
 from repositories import vet_repository
+from repositories import note_repository
 
 
 pets_blueprint = Blueprint("pets", __name__)
@@ -43,7 +45,10 @@ def view_all_pets():
 @pets_blueprint.route('/pets/<id>', methods=['GET'])
 def view_selected_pet(id):
     pet = pet_repository.select(id)
-    return render_template('/pets/view_selected.html', pet=pet)
+    owner = owner_repository.select(id)
+    pets = owner_repository.select_pets_of_owner(owner)
+    notes = note_repository.filter_notes_by_pet(pet)
+    return render_template('/pets/view_selected.html', pet=pet, owner=owner, pets=pets, notes=notes)
 
 
 @pets_blueprint.route('/pets/<id>/edit')

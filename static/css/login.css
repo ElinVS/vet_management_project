@@ -1,16 +1,19 @@
 body {
     background: url('/static/images/blackdog.jpg'); 
     background-color: black;
-    height: 800px; 
+    /* height: 800px;  */
+    background-size:  contain;
     background-position: left;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-attachment: fixed;
+    
 }
 
 .login-container {
     display: flex;
     justify-content: flex-end; 
-    padding: 20%;        
+    padding-right: 28%;
+    padding-top: 14%;        
 }
 
 #box {
@@ -50,14 +53,4 @@ button[type=submit] {
     background-color: #989788;
 
 }
-
-/* button[type=submit]:hover {
-    background: #ff6a0e;
-} */#4ba7e4
-
-
-
-
-
-
 

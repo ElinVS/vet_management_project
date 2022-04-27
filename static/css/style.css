@@ -11,7 +11,7 @@ body {
     flex-direction: row; 
     width: 100%; 
     text-align: center; 
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: x-large;
     padding: 10px; 
     /* min-height: 100px;  */
@@ -25,6 +25,10 @@ body {
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Lato', sans-serif;
+    margin-left: 250px;
 }
 
 .register {
@@ -134,7 +138,7 @@ h1 {
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
-    box-shadow:5px 5px 5px 5px #b8bcb9;
+    /* box-shadow:5px 5px 5px 5px #b8bcb9; */
     
 }
 
@@ -142,7 +146,7 @@ h1 {
     width:250px;
     height:250px;
     background: url('/static/images/littlebulldog.jpg');
-    background-position: top;
+    background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
