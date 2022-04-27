@@ -57,13 +57,13 @@
         <input type="submit" value="Delete Pet">
     </form>
 
-    <a href="/pets/{{pet.id}}/notes/add_note"><button type="menu"</button>Add Treatment Note</a>
+    <a href="/pets/{{pet.id}}/notes/add_note"><button type="submit"</button>Add Treatment Note</a>
 
 </section>
 
     
     
-<hgroup id="owner-name"> 
+<hgroup id="pet-name"> 
 
 <h1>Owner: {{pet.owner.first_name}} {{pet.owner.last_name}}</h1>
 </hgroup> 
@@ -97,29 +97,26 @@
 
 
 <section class="buttons">
-<a href="/owners/{{ pet.owner.id }}/edit/pet/{{pet.id}}"> <button type="submit">Edit</button></a>
+<a href="/owners/{{ pet.owner.id }}/edit/pet/{{pet.id}}"> <button type="submit">Edit Owner</button></a>
 
 <form action="/owners/{{ pet.owner.id }}/delete" method="POST">
-    <input type="submit" value="Delete">
+    <input type="submit" value="Delete Owner">
 </form>
 </section>
 
-<hgroup id="owners-pet">
+<hgroup id="pet-name">
     <h1>All Pets Registered to Owner</h1>
 </hgroup>
 
 <div id="pet-link">
 
 {% for animal in pets %}
-    
+
 <a href="/pets/{{ animal.id }}">{{ animal.name }} </a>
-    
+
 {% endfor %}
 
 </div>
-
-
-
 
 {% endblock %}
 

@@ -2,28 +2,32 @@
 {% block content %}
 
 
+
+<div class="register-form">
 <form action="/vets/{{vet.id}}" method="post">
-    
+    <h1 >Update Vet</h1>
     <div>
-      <label for="first-name">First Name:</label>
+      <label for="first-name"></label>
       <input type="text" id="first-name" name="first-name" value="{{vet.first_name}}" required autofocus>
     </div>
   
     <div>
-      <label for="last-name">Last Name:</label>
-      <input type="last-name" id="last-name" name="last-name" value="{{vet.last_name}}" required>
+      <label for="last-name"></label>
+      <input type="text" id="last-name" name="last-name" value="{{vet.last_name}}" required>
     </div>
   
     <div>
-      <label for="speciality">Speciality:</label>
-      <input type="speciality" id="speciality" name="speciality" value="{{vet.speciality}}" required>
+      <label for="speciality"></label>
+      <input type="text" id="speciality" name="speciality" value="{{vet.speciality}}" required>
     </div>
-
+    <br>
       
-      <input type="submit" value="Update Vet Details">
+      <input class="register-button" type="submit" value="Update">
       
 
 </form> 
+
+</div>
 
 
 {% endblock %}

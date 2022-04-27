@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>VIEW SELECTED VET</h1>
 
-<table>
+<h1 id="vets-name">{{vet.first_name}} {{vet.last_name}}</h1>
+
+<table class="register-form">
+    
+
     <tr>
         <th>First Name</th>
         <th>Last Name</th>
@@ -17,22 +20,34 @@
     </tr>
 </table>
 
+
+<section class="vet-buttons">
 <a href="/vets/{{ vet.id }}/edit">
-    <button type="submit">Edit</button></a>
+    <button type="submit">Edit Vet</button></a>
 
 
     <form action="/vets/{{ vet.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
+        <input type="submit" value="Delete Vet">
     </form>
+
+</section>
+
+<section class="vets-pets">
 
 <h3>Pets assigned to {{vet.first_name}} {{vet.last_name}}</h3>
 
+
+
     {% for pet in pets %}
 
-    <a href="/pets/{{ pet.id }}">{{ pet.name }} </a>
+<a href="/pets/{{ pet.id }}">{{ pet.name }} </a>
 
 
     {% endfor %}
+
+</section>
+
+
 
 
 {% endblock %}

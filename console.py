@@ -10,33 +10,33 @@ import repositories.pet_repository as pet_repository
 import repositories.vet_repository as vet_repository
 import repositories.note_repository as note_repository
 
-owner_repository.delete_all()
-pet_repository.delete_all()
-vet_repository.delete_all()
+# owner_repository.delete_all()
+# pet_repository.delete_all()
+# vet_repository.delete_all()
 
 
-vet_1 = Vet("Dr.Peter", "Peterson", "Small animal surgery")
-vet_2 = Vet("Dr.Fergus", "Ferguson", "Dentistry")
+# vet_1 = Vet("Dr.Peter", "Peterson", "Small animal surgery")
+# vet_2 = Vet("Dr.Fergus", "Ferguson", "Dentistry")
 
-vet_repository.save(vet_1)
-vet_repository.save(vet_2)
+# vet_repository.save(vet_1)
+# vet_repository.save(vet_2)
 
-owner_1 = Owner("Alex", "Anderson", "alex@gmail.com", "0789 123 456", "1 The Street Edinburgh", "EH6 8HW", True)
-owner_2 = Owner("Benjamin", "Benson", "ben@gmail.com", "0777 333 444", "2 The Other Street Edinburgh", "EH6 8HW", False)
-
-
-owner_repository.save(owner_1)
-owner_repository.save(owner_2)
+# owner_1 = Owner("Alex", "Anderson", "alex@gmail.com", "0789 123 456", "1 The Street Edinburgh", "EH6 8HW", True)
+# owner_2 = Owner("Benjamin", "Benson", "ben@gmail.com", "0777 333 444", "2 The Other Street Edinburgh", "EH6 8HW", False)
 
 
-pet_1 = Pet("Marvin", "Dog", "01-02-2017", owner_1 ,vet_1)
-pet_2 = Pet("Milo", "Cat", "02-02-2012", owner_2, vet_2)
+# owner_repository.save(owner_1)
+# owner_repository.save(owner_2)
 
-pet_repository.save(pet_1)
-pet_repository.save(pet_2)
 
-note_1= Note("Treated for kennel cough 01-02-2022", pet_1)
-note_repository.save(note_1)
+# pet_1 = Pet("Marvin", "Dog", "01-02-2017", owner_1 ,vet_1)
+# pet_2 = Pet("Milo", "Cat", "02-02-2012", owner_2, vet_2)
+
+# pet_repository.save(pet_1)
+# pet_repository.save(pet_2)
+
+# note_1= Note("Treated for kennel cough 01-02-2022", pet_1)
+# note_repository.save(note_1)
 
 
 
