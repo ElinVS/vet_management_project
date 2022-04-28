@@ -1,5 +1,5 @@
 body {
-    /* background-image: url('/static/images/blackdog.jpg'); */
+    background-image: url('/static/images/blackdog.jpg');
     background-color: #ccd1cd;
     min-height: 500px;
     background-size: contain;
