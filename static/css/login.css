@@ -1,7 +1,6 @@
 body {
     background: url('/static/images/blackdog.jpg'); 
     background-color: black;
-    /* height: 800px;  */
     background-size:  contain;
     background-position: left;
     background-repeat: no-repeat;
@@ -27,7 +26,6 @@ body {
 }
 
 
-
 input[type=text] {
     margin:20px 20px 0px 20px;
     padding:10px;
@@ -37,10 +35,9 @@ input[type=text] {
     background-color: #E0E1DD;
     border-radius: 10px;
     font-family: 'Nunito', sans-serif;
-    /* font-size: large; */
     border-color: transparent; 
-    
 }
+
 button[type=submit] {
    
     margin:35px 20px 0px 20px;
@@ -51,6 +48,5 @@ button[type=submit] {
     cursor:pointer;
     font-family: 'Nunito', sans-serif;
     background-color: #989788;
-
 }
 
