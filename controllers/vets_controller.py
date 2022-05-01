@@ -1,10 +1,6 @@
-from flask import Blueprint, Flask, redirect, render_template, request, redirect
+from flask import Blueprint, redirect, render_template, request, redirect
 
-from models.pet import Pet
-from models.owner import Owner
 from models.vet import Vet
-from repositories import pet_repository
-from repositories import owner_repository
 from repositories import vet_repository
 
 

@@ -7,40 +7,45 @@
 <div class="register-form">
 <form action="/pets/view_all" method="post">
     <div>
-        <label for="name">Name</label>
+        <label for="name"></label>
         <input type="text" id="name" name="name" placeholder="Name" required>   
     </div>
       
     <div>
-        <label for="species">Species</label>
+        <label for="species"></label>
         <input type="text" id="species" name="species" placeholder="Species" required>
     </div>
+    <br>
+
+    <div class="petform">
 
     <div>
-        <label for="dob">D.O.B:</label>
-        <input type="date" id="dob" name="dob" placeholder="dob" required>
+        <label for="dob"></label>
+        <input type="date" id="select-button" name="dob" placeholder="select d.o.b" required>
     </div>
 
-
+<br>
     <div>
-        <label for="owner">Owner:</label>
-        <select id="owner" name="owner_id">
+        <label for="owner"></label>
+        <select id="select-button" name="owner_id" placeholder="Select Owner">
           {% for owner in owners %}
           <option value="{{owner.id}}">{{owner.first_name}} {{owner.last_name}}</option>
           {% endfor %}
         </select>
       </div>
-
+<br>
       <div>
-        <label for="vet">Assign Vet:</label>
-        <select id="vet" name="vet_id">
+        <label for="select-vet"></label>
+        <select id="select-button" name="vet_id">
           {% for vet in vets %}
           <option value="{{vet.id}}">{{vet.first_name}} {{vet.last_name}}</option>
           {% endfor %}
         </select>
       </div>
+      <br>
 
     <button class="register-button"  type="submit">Register</button> 
+</div>
 
 </form>
 

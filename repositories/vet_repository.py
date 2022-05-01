@@ -3,8 +3,6 @@ from models.vet import Vet
 from models.pet import Pet
 
 import repositories.owner_repository as owner_repository
-import repositories.vet_repository as vet_repository
-
 
 def save(vet):
     sql = "INSERT INTO vets (first_name, last_name, speciality) VALUES (%s, %s, %s) RETURNING id"
@@ -12,7 +10,6 @@ def save(vet):
     results = run_sql(sql, values)
     id = results[0]['id']
     vet.id = id
-
 
 def select_all():
     vets = []
@@ -31,7 +28,6 @@ def select(id):
     result = run_sql(sql,values)[0]
     vet = Vet(result["first_name"], result["last_name"], result["speciality"],result["id"])
     return vet
-
 
 
 def delete_all():

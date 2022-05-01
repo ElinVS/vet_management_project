@@ -110,8 +110,8 @@ tr:hover {
 #register-owner {
     width: 250px;
     height: 250px;
-    background-image: url('/static/images/bwdog3.jpg');
-    background-position: center;
+    background-image: url('/static/images/corgi.jpg');
+    background-position: top;
     background-size: cover;
     background-repeat:no-repeat;
     margin-top: 150px;
@@ -123,8 +123,8 @@ tr:hover {
 #register-pet{
     width: 250px;
     height: 250px;
-    background-image: url('/static/images/bwdog2.jpg');
-    background-position: center;
+    background-image: url('/static/images/happycorgi.jpg');
+    background-position: top bottom;
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 150px;
@@ -146,8 +146,8 @@ tr:hover {
 #register-vet {
     width: 250px;
     height: 250px;
-    background: url('/static/images/bottomcat.jpg');
-    background-position: center;
+    background: url('/static/images/dogwithbowl.jpg');
+    background-position: top bottom;
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 150px;
@@ -158,8 +158,8 @@ tr:hover {
 #veterinarians {
     width: 250px;
     height: 250px;
-    background: url('/static/images/bottomdog.jpg');
-    background-position: center;
+    background: url('/static/images/dogwithtoy.jpg');
+    background-position: top  ;
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 150px;
@@ -195,7 +195,7 @@ a:hover{
     width:250px;
     height:250px;
     background: url('/static/images/bottomcat.jpg');
-    background-position: center;
+    background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
@@ -230,8 +230,8 @@ a:hover{
 #app {
     width:250px;
     height:250px;
-    background: url('/static/images/bottomdog.jpg');
-    background-position: center;
+    background: url('/static/images/christmaskitten.jpg');
+    background-position: top  ;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
@@ -303,4 +303,16 @@ input[type=text] {
     font-family:'Lato', sans-serif; 
 
 }
+
+
+#select-button{
+    margin:20px 20px 0px 20px;
+    padding:10px;
+    width: 200px;
+    border-radius: 10px;
+}
+   
+
+
+
 
