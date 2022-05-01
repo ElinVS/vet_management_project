@@ -31,7 +31,7 @@
 
     <div>
         <label for="vet">Assign Vet:</label>
-        <select id="vet" name="vet_id">
+        <select id="vet_id" name="vet_id">
           {% for vet in vets %}
           <option value="{{vet.id}}">{{vet.first_name}} {{vet.last_name}}</option>
           {% endfor %}

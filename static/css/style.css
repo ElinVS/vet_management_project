@@ -21,6 +21,14 @@ body {
     padding: 10px; 
     align-items: flex-end;
     list-style: none;
+    
+}
+
+.view-pets-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-left: 518px;
 }
 
 .view-pets, th, td {
@@ -30,7 +38,39 @@ body {
     padding-right: 15px;
     font-family: 'Lato', sans-serif;
     text-align: left;
-    margin-left: 580px;
+}
+
+.selected-pet-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 540px;
+}
+
+.selected-note-container {
+    display:flex;
+    justify-content: flex-end;
+    margin-right: 380px;
+}
+.selected-owner-container {
+    display:flex;
+    justify-content: flex-end;
+    margin-left:530px;
+
+}
+
+.selected-pet-headings {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left:540px;
+}
+
+.pets-to-owners {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left:540px;
 }
 
 .selected-pet, th, td {
@@ -40,7 +80,6 @@ body {
     padding-right: 15px;
     font-family: 'Lato', sans-serif;
     text-align: left;
-    margin-left: 580px;
 }
 
 .selected-vet,th,td {
@@ -64,10 +103,11 @@ tr:hover {
 
 .buttons {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-end;
     gap: 10px;
     padding:10px;
+    margin-left: 530px ;
 }
 
 .vet-buttons {
@@ -292,8 +332,8 @@ input[type=text] {
 
 .notes {
     display:flex;
-    justify-content: flex-end;
-    margin-right: 10px;
+    justify-content: center;
+    margin-left: 520px;
 }
 
 #vets-name{
