@@ -13,6 +13,8 @@ def save(owner):
     owner.id = id
 
 
+
+
 def select_all():
     owners = []
 

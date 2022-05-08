@@ -7,15 +7,14 @@ from repositories import owner_repository
 from repositories import vet_repository
 from repositories import note_repository
 
-
 pets_blueprint = Blueprint("pets", __name__)
+
 
 @pets_blueprint.route('/pets/register_pet')
 def register_new_pet_form():
     owners = owner_repository.select_all()
     vets = vet_repository.select_all()
     return render_template('/pets/register_pet.html', owners=owners, vets=vets)
-
 
 @pets_blueprint.route("/pets/view_all", methods=['POST'])
 def register_new_pet():
@@ -29,9 +28,6 @@ def register_new_pet():
     pet= Pet(name, species, dob, owner,vet,id)
     pet_repository.save(pet)
     return redirect('/pets/view_all')
-
-
-
 
 @pets_blueprint.route('/pets/view_all')
 def view_all_pets():
@@ -47,14 +43,12 @@ def view_selected_pet(id):
     notes = note_repository.filter_notes_by_pet(pet)
     return render_template('/pets/view_selected.html', pet=pet, owner=owner, pets=pets, notes=notes)
 
-
 @pets_blueprint.route('/pets/<id>/edit')
 def edit_form(id):
     pet = pet_repository.select(id)
     owners = owner_repository.select_all()
     vets = vet_repository.select_all()
     return render_template('/pets/edit_pet.html', pet=pet, owners=owners, vets=vets)
-
 
 @pets_blueprint.route('/pets/<id>',methods=['POST'])
 def update_pet_details(id):

@@ -13,7 +13,6 @@ def save(pet):
     id = results[0]['id']
     pet.id = id
 
-
 def select_all():
     pets = []
 
@@ -51,6 +50,9 @@ def update(pet):
     sql = "UPDATE pets SET (name, species, dob, owner_id, vet_id) = (%s, %s, %s, %s, %s) WHERE id = %s"
     values = [pet.name, pet.species, pet.dob, pet.owner.id, pet.vet.id, pet.id]
     run_sql(sql, values)
+
+
+
 
 
 

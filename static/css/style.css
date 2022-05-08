@@ -44,7 +44,7 @@ body {
     display:flex;
     flex-direction: column;
     justify-content: flex-end;
-    margin-left: 540px;
+    margin-left: 600px;
 }
 
 .selected-note-container {
@@ -58,19 +58,26 @@ body {
     margin-left:530px;
 
 }
+.selected-vet-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 600px;
+
+}
 
 .selected-pet-headings {
     display:flex;
     flex-direction: column;
     justify-content: center;
-    margin-left:540px;
+    margin-left:600px;
 }
 
 .pets-to-owners {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left:540px;
+    margin-left:600px;
 }
 
 .selected-pet, th, td {
@@ -89,7 +96,7 @@ body {
     padding-right: 15px;
     font-family: 'Lato', sans-serif;
     text-align: left;
-    margin-left: 700px;
+    margin-left: 600px;
 
 }
 
@@ -107,16 +114,16 @@ tr:hover {
     justify-content: flex-end;
     gap: 10px;
     padding:10px;
-    margin-left: 530px ;
+    margin-left: 600px ;
 }
 
 .vet-buttons {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-end;
     gap: 10px;
     padding:10px;
-    margin-right:200px
+    margin-left:600px
 }
 
 .vets-pets {
@@ -339,11 +346,9 @@ input[type=text] {
 #vets-name{
     display:flex;
     justify-content: center;
-    margin-left: 300px;
+    margin-left: 200px;
     font-family:'Lato', sans-serif; 
-
 }
-
 
 #select-button{
     margin:20px 20px 0px 20px;

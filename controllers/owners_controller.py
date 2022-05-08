@@ -4,9 +4,7 @@ from flask import Blueprint, redirect, render_template, request
 from models.owner import Owner
 from repositories import owner_repository
 
-
 owners_blueprint = Blueprint("owners", __name__)
-
 
 
 @owners_blueprint.route('/owners/register_owner')

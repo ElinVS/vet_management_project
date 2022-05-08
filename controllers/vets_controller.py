@@ -3,7 +3,6 @@ from flask import Blueprint, redirect, render_template, request, redirect
 from models.vet import Vet
 from repositories import vet_repository
 
-
 vets_blueprint = Blueprint("vets", __name__)
 
 
@@ -36,12 +35,10 @@ def view_selected_vet(id):
     pets = vet_repository.select_pets_of_vet(vet)
     return render_template('/vets/view_selected.html', vet=vet,pets=pets)
 
-
 @vets_blueprint.route('/vets/<id>/edit')
 def edit_form(id):
     vet = vet_repository.select(id)
     return render_template('/vets/edit_vet.html', vet=vet)
-
 
 @vets_blueprint.route('/vets/<id>',methods=['POST'])
 def update_vet_details(id):
@@ -52,7 +49,6 @@ def update_vet_details(id):
     update_vet = Vet(first_name, last_name, speciality, id)
     vet_repository.update(update_vet)
     return redirect(f'/vets/{id}')
-
 
 @vets_blueprint.route('/vets/<id>/delete', methods=['POST'])
 def delete_vet(id):
